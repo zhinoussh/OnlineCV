@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { TemplateSelectorComponent } from './template-selector/template-selector.component';
+import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateSelectorComponent
+    TemplateSelectorComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
