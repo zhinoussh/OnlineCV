@@ -9,6 +9,7 @@ import { PageNotFoundComponent} from './page-not-found/page-not-found.component'
 
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { SwiperModule, SwiperConfigInterface, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { TopProgressBarComponent } from './top-progress-bar/top-progress-bar.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -20,7 +21,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   declarations: [
     AppComponent,
     TemplateSelectorComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TopProgressBarComponent
   ],
   imports: [
     BrowserModule,

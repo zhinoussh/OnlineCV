@@ -1,9 +1,10 @@
 <div class="template-container" >
   
   <swiper [config]="config" (indexChange)="onIndexChange($event)">
-    <div *ngFor="let slide of templateImages" class="swiper-slide">
+  <swiper [config]="config">
+    <div *ngFor="let slide of templateArray" class="swiper-slide">
       <div fxLayoutAlign="center center" fxFlexFill>
-        <img src="{{slide}}" alt='no-photo' >
+        <img src="{{slide.templateFile}}" alt='no-photo' (click)="chooseTemplate(slide.templateID)" >
       </div>
     </div>
   </swiper>

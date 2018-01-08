@@ -10,10 +10,20 @@ import {Cvtemplate} from '../models/cvtemplate';
 export class TemplateSelectorComponent implements OnInit {
 
   public templateArray: Cvtemplate[] = [
-    new Cvtemplate {
+    {
       templateID: 1,
       templateFile: '../../assets/templates/template1.jpg',
       templateName: 'first'
+    },
+    {
+      templateID: 2,
+      templateFile: '../../assets/templates/template2.jpg',
+      templateName: 'second'
+    },
+    {
+      templateID: 3,
+      templateFile: '../../assets/templates/template3.jpg',
+      templateName: 'third'
     }
   ];
   
@@ -37,8 +47,8 @@ export class TemplateSelectorComponent implements OnInit {
   //   console.log('Swiper index: ', index);
   // }
 
-  public chooseTemplate(){
-
+  public chooseTemplate(id: number) {
+    console.log('selected template: ', id);
   }
 
 }
