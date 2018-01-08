@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    height: 98vh;
+    min-height: 98vh;
+}
+
+.swiper-button-prev {
+    background-image: url("/assets/icons/prev.png") !important;
+  }
+  
+  .swiper-button-next {
+    background-image: url("/assets/icons/next.png") !important;
+  }

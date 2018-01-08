@@ -1,3 +1,10 @@
-<p>
-  template-selector works!
-</p>
+<div class="template-container" >
+  
+  <swiper [config]="config" (indexChange)="onIndexChange($event)">
+    <div *ngFor="let slide of templateImages" class="swiper-slide">
+      <div fxLayoutAlign="center center" fxFlexFill>
+        <img src="{{slide}}" alt='no-photo' >
+      </div>
+    </div>
+  </swiper>
+</div>

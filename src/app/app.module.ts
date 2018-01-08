@@ -7,6 +7,14 @@ import { AppComponent } from './app.component';
 import { TemplateSelectorComponent } from './template-selector/template-selector.component';
 import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { SwiperModule, SwiperConfigInterface, SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto',
+  keyboard: true
+};
 
 @NgModule({
   declarations: [
@@ -16,9 +24,16 @@ import { PageNotFoundComponent} from './page-not-found/page-not-found.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule,
+    SwiperModule
   ],
-  providers: [],
+  providers: [
+     {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+     }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
