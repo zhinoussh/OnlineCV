@@ -1,6 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Muli');
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Muli');
+@import 'css/variables';
+@import 'css/fonts';
 
 body {
     height: 98vh;
@@ -15,5 +14,36 @@ body {
     background-image: url("/assets/icons/next.png") !important;
   }
 
-  $base-blue-color: rgb(0, 174, 255);
-  $dark-blue-color:darken(rgb(0, 174, 255),10%);
+  .text-label{
+    font-size: 10pt;
+    font-family: 'PT Sans';
+    color: $darker-gray-color !important;
+    margin-top:5px;
+  }
+  .alert{
+    padding: 5px !important;
+    font-size: 9pt;
+    font-family: 'PT Sans';
+  }
+
+  .glyphicon{
+    font-size: 15pt !important;
+  }
+
+  .icon-flipped {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH"; 
+  }
+
+  .btn{
+    font-family: 'PT Sans'; 
+    font-weight: bold !important;
+  }
+  .btn-default {
+    background-color: $gray-color !important;
+    color: $red-color !important;
+  }

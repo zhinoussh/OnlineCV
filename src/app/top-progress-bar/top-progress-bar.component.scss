@@ -1,18 +1,21 @@
-
+@import 'src/css/variables';
+@import "src/css/fonts";
 
 .header-container{
     margin: 1%;
     padding: 1% 0 0 0;
-    background-color: rgba(238, 238, 238, 0.815);
+    background-color: $gray-color;
     .header-item{
         font-family: 'Bree Serif', serif;
-        // border-bottom: 5px solid rgb(0, 174, 255);
-        border-bottom: 5px solid rgba(139, 139, 139, 0.151);        
+        font-size: 14pt;
+        border-bottom: 5px solid $dark-gray-color;      
         text-align: center;
         margin-left: 1%;    
     }
     .header-item-first{
         margin-left:0 !important;
     }
-    
+    .header-item-completed{
+        border-bottom: 5px solid $base-blue-color;
+    }
 }

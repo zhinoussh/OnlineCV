@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperComponent, SwiperConfigInterface} from 'ngx-swiper-wrapper';
 import {Cvtemplate} from '../models/cvtemplate';
+import { SharedGeneratingLevelService } from '../services/shared-generator-level/shared-generating-level.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'workstar-template-selector',
@@ -38,17 +40,15 @@ export class TemplateSelectorComponent implements OnInit {
   };
 
 
-  constructor() { }
+  constructor(private router: Router,
+              private generatorLevelservice: SharedGeneratingLevelService) { }
 
   ngOnInit() {
   }
 
-  // public onIndexChange(index: number) {
-  //   console.log('Swiper index: ', index);
-  // }
-
   public chooseTemplate(id: number) {
-    console.log('selected template: ', id);
+    this.router.navigateByUrl('PersonalProfile/' + id);
+    this.generatorLevelservice.setGeneratorLevel(1);
   }
 
 }

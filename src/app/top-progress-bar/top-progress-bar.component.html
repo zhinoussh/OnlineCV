@@ -2,6 +2,6 @@
     <ng-container *ngFor="let headerItem of headerItems; let i=index" 
                   fxLayout.xs="column" fxLayout.gt-xs="row" >
         <div fxFlex="20%" fxFlex.xs="95%"
-            [ngClass]="{'header-item':true,'header-item-first': i==0}">{{headerItem}}</div>
+            [ngClass] = "{'header-item':true,'header-item-first': i==0,'header-item-completed': i<level}">{{headerItem}}</div>
     </ng-container>
 </div>

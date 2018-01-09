@@ -1,0 +1,67 @@
+<div class="education-container">
+    <form (ngSubmit)="SaveAllEducation()" #profileForm="ngForm">
+  
+      <div fxLayout="column" fxLayoutGap="10px">
+        <div fxLayout>
+          <div fxFlex="20%">
+            <label for="firstName" class="text-label">First Name</label>
+          </div>
+          <div fxFlex="80%">
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="profile.firstName" 
+            name="firstName" required #fName="ngModel">
+          </div>
+        </div>
+  
+        <div fxLayout>
+          <div fxFlex="20%">
+            <label for="lastName" class="text-label">Last Name</label>
+          </div>
+          <div fxFlex="80%">
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="profile.lastName" 
+            name="lastName" required #lName="ngModel">
+          </div>
+        </div>
+  
+        <div fxLayout>
+            <div fxFlex="20%">
+              <label for="phoneNumber" class="text-label">Phone Number</label>
+            </div>
+            <div fxFlex="80%">
+              <input type="text" pattern="[0-9]+" class="form-control" id="phoneNumber" 
+              [(ngModel)]="profile.phoneNumber" name="phoneNumber" required #phone="ngModel">
+            </div>
+          </div>
+  
+          <div fxLayout>
+              <div fxFlex="20%">
+                <label for="email" class="text-label">Email</label>
+              </div>
+              <div fxFlex="80%">
+                <input type="text" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  
+                class="form-control" id="email" [(ngModel)]="profile.email" name="email" required #email="ngModel">
+              </div>
+            </div>
+  
+            <div fxLayout>
+                <div fxFlex="20%">
+                  <label for="address" class="text-label">Address</label>
+                </div>
+                <div fxFlex="80%">
+                  <input type="text" class="form-control" id="address" [(ngModel)]="profile.address" 
+                  name="address" required #address="ngModel">
+                </div>
+              </div>
+  
+          <div class="alert alert-danger" [hidden]="(fName.pristine || fName.valid) && 
+          (lName.pristine || lName.valid) && (phone.pristine || phone.valid) 
+          && (email.pristine || email.valid) && (address.pristine || address.valid)">
+              Please ensure all fields are entered and in correct format.
+          </div>
+  
+         <button type="submit" class="btn btn-primary" [disabled]="!profileForm.form.valid">
+                <i class="glyphicon glyphicon-share-alt"></i> Save education history and go to next step
+         </button>
+          
+      </div>
+    </form>
+  </div>
