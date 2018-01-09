@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopProgressBarComponent implements OnInit {
 
+  headerItems: string[]= ['Choose Template', 'Personal Profile', 'Education', 'Work Experience', 'Skills & Certificates'];
   constructor() { }
 
   ngOnInit() {

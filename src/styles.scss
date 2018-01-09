@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Muli');
+
 body {
     height: 98vh;
     min-height: 98vh;
@@ -11,3 +14,6 @@ body {
   .swiper-button-next {
     background-image: url("/assets/icons/next.png") !important;
   }
+
+  $base-blue-color: rgb(0, 174, 255);
+  $dark-blue-color:darken(rgb(0, 174, 255),10%);

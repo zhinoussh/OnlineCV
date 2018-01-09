@@ -1,8 +1,16 @@
+@import "src/styles";
+
 .template-container{
     width:80%;
     margin:0 auto;
     text-align:center; 
-    height:90% !important;      
+    height:90% !important;
+    
+    .text-choose-template{
+        font-family: 'Bree Serif', serif;
+        color: $dark-blue-color;
+        font-size: 14pt;
+    }
 }
 .swiper-slide{
     // background-color: #eee;
