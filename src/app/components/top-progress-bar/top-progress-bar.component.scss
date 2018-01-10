@@ -16,6 +16,9 @@
         margin-left:0 !important;
     }
     .header-item-completed{
-        border-bottom: 5px solid $base-blue-color;
+        border-bottom: 5px solid $base-blue-color;        
+    }
+    .header-visibility{
+        display: none;
     }
 }

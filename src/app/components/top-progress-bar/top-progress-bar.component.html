@@ -1,7 +1,7 @@
-<div class='header-container'>
-    <ng-container *ngFor="let headerItem of headerItems; let i=index" 
-                  fxLayout.xs="column" fxLayout.gt-xs="row" >
-        <div fxFlex="20%" fxFlex.xs="95%"
-            [ngClass] = "{'header-item':true,'header-item-first': i==0,'header-item-completed': i<level}">{{headerItem}}</div>
-    </ng-container>
+<div class='header-container' fxLayout.xs="column" fxLayout.gt-xs="row">
+    <div *ngFor="let headerItem of headerItems; let i=index" 
+            fxFlex="20%" fxFlex.xs="95%" [ngStyle.xs]="{'display': i===level ? 'block' : 'none'}"
+            [ngClass] = "{'header-item':true,'header-item-first': i==0,'header-item-completed': i<level}">
+            {{headerItem}}
+    </div>
 </div>
