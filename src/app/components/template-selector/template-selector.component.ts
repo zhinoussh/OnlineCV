@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperComponent, SwiperConfigInterface} from 'ngx-swiper-wrapper';
-import {Cvtemplate} from '../models/cvtemplate';
-import { SharedGeneratingLevelService } from '../services/shared-generator-level/shared-generating-level.service';
+import {Cvtemplate} from '../../models/cvtemplate';
+import { SharedGeneratingLevelService } from '../../services/shared-generator-level/shared-generating-level.service';
 import { Router } from '@angular/router';
 
 @Component({

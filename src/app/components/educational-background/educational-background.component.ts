@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params} from '@angular/router';
-import { SharedGeneratingLevelService } from '../services/shared-generator-level/shared-generating-level.service';
-import { Education } from '../models/education';
+import { SharedGeneratingLevelService } from '../../services/shared-generator-level/shared-generating-level.service';
+import { Education } from '../../models/education';
 import { FormGroup } from '@angular/forms';
 
 @Component({

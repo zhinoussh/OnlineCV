@@ -7,13 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { ImageSwiperModule } from './modules/image-swiper.module';
 
 import { AppComponent } from './app.component';
-import { TemplateSelectorComponent } from './template-selector/template-selector.component';
-import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import { TopProgressBarComponent } from './top-progress-bar/top-progress-bar.component';
-import { PersonalProfileComponent } from './personal-profile/personal-profile.component';
+import { TemplateSelectorComponent } from './components/template-selector/template-selector.component';
+import { PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import { TopProgressBarComponent } from './components/top-progress-bar/top-progress-bar.component';
+import { PersonalProfileComponent } from './components/personal-profile/personal-profile.component';
+import { EducationalBackgroundComponent } from './components/educational-background/educational-background.component';
 
 import { SharedGeneratingLevelService } from './services/shared-generator-level/shared-generating-level.service';
-import { EducationalBackgroundComponent } from './educational-background/educational-background.component';
 
 @NgModule({
   declarations: [

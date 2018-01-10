@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-import { SharedGeneratingLevelService } from '../services/shared-generator-level/shared-generating-level.service';
+import { SharedGeneratingLevelService } from '../../services/shared-generator-level/shared-generating-level.service';
 
 @Component({
   selector: 'workstar-top-progress-bar',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Params, ActivatedRoute,Router } from '@angular/router';
-import {PersonalProfile} from '../models/personal-profile';
-import { SharedGeneratingLevelService } from '../services/shared-generator-level/shared-generating-level.service';
+import { Params, ActivatedRoute, Router } from '@angular/router';
+import {PersonalProfile} from '../../models/personal-profile';
+import { SharedGeneratingLevelService } from '../../services/shared-generator-level/shared-generating-level.service';
 
 @Component({
   selector: 'workstar-personal-profile',

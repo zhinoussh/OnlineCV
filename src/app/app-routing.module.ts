@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import { TemplateSelectorComponent} from './template-selector/template-selector.component';
-import { PersonalProfileComponent} from './personal-profile/personal-profile.component';
-import { EducationalBackgroundComponent} from './educational-background/educational-background.component';
+import { PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import { TemplateSelectorComponent} from './components/template-selector/template-selector.component';
+import { PersonalProfileComponent} from './components/personal-profile/personal-profile.component';
+import { EducationalBackgroundComponent} from './components/educational-background/educational-background.component';
 
 const routes: Routes = [
   { path: 'CVtemplate', component: TemplateSelectorComponent },
