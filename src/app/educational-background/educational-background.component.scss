@@ -1,4 +1,15 @@
+@import 'src/css/variables';
+
+.main-container{
+    margin-top:4%;    
+}
+
 .education-container{
-    width: 70%;
-    margin:4% auto;    
+    margin: 0 auto;
+}
+
+.education-item{
+    border-bottom:1px solid $gray-color;
+    padding-bottom:10px !important;
+    margin-top:10px;
 }

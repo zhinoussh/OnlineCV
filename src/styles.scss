@@ -6,6 +6,10 @@ body {
     min-height: 98vh;
 }
 
+input{
+  font-size: 10pt !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .swiper-button-prev {
     background-image: url("/assets/icons/prev.png") !important;
   }
@@ -13,12 +17,17 @@ body {
   .swiper-button-next {
     background-image: url("/assets/icons/next.png") !important;
   }
-
   .text-label{
     font-size: 10pt;
-    font-family: 'PT Sans';
+    font-family: Calibri;
     color: $darker-gray-color !important;
     margin-top:5px;
+  }
+  .text-empty-block{
+    font-size: 10pt;
+    font-family: Calibri;
+    color: $light-red-color !important;
+    margin-top:10px;
   }
   .alert{
     padding: 5px !important;
@@ -42,8 +51,35 @@ body {
   .btn{
     font-family: 'PT Sans'; 
     font-weight: bold !important;
+    width: 100%;
   }
   .btn-default {
     background-color: $gray-color !important;
     color: $red-color !important;
+  }
+
+  .btn-ok {
+   padding:5px 0 5px 0 !important;
+  }
+
+  .btn-edit {
+    color:$dark-blue-color !important;
+    background-color: transparent !important;
+    border: none !important;
+    }
+
+.btn-delete {
+  color: $light-red-color !important;
+  background-color: transparent !important;
+    border: none !important;
+}
+.btn-move-down, .btn-move-up {
+  color: $base-blue-color !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+  .glyphicon-ok, .glyphicon-trash, .glyphicon-pencil
+  ,.glyphicon-arrow-down, .glyphicon-arrow-up {
+    font-size: 11pt !important;
   }
