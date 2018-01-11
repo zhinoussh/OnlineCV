@@ -76,6 +76,7 @@ export class EducationalBackgroundComponent implements OnInit {
     // post request to set education for CVId(send array + CVID)
 
     this.generatorLevelService.setGeneratorLevel(3);
+    this.router.navigateByUrl('Job/' + this.CVId);
   }
 
 }

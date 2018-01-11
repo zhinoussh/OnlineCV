@@ -1,7 +1,22 @@
+@import 'src/css/variables';
+
 .main-container{
-    margin-top:4%;    
+    height:93%;    
 }
 .profile-container{
-    margin: 0 auto;;    
+    margin: 0 auto;
+    background-color: $light-gray-color;    
+    height:100%;
+    padding:3%;
+    border: 1px solid $gray-color;
+    box-shadow: 7px 5px 7px  $dark-gray-color;
+    border-radius:5px;
+
+    .text-complete-profile{
+        font-family: 'Bree Serif', serif;
+        color: $dark-blue-color;
+        font-size: 14pt;
+        margin-bottom:5%;
+    }
 }
 

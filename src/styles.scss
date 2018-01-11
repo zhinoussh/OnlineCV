@@ -4,11 +4,7 @@
 body {
     height: 98vh;
     min-height: 98vh;
-}
-
-input{
-  font-size: 10pt !important;
-  font-family: Arial, Helvetica, sans-serif;
+    background: url('assets/images/pattern1.jpg') repeat;
 }
 .swiper-button-prev {
     background-image: url("/assets/icons/prev.png") !important;
@@ -18,23 +14,23 @@ input{
     background-image: url("/assets/icons/next.png") !important;
   }
   .text-label{
-    font-size: 10pt;
+    font-size: 12pt;
     font-family: Calibri;
     color: $darker-gray-color !important;
     margin-top:5px;
   }
-  .text-empty-block{
-    font-size: 10pt;
-    font-family: Calibri;
-    color: $light-red-color !important;
-    margin-top:10px;
-  }
   .alert{
-    padding: 5px !important;
-    font-size: 9pt;
+    padding: 7px !important;
+    font-size: 11pt;
     font-family: 'PT Sans';
   }
-
+.alert-default{
+  background-color: $gray-color !important;
+  color: $darker-gray-color !important;
+  border-color: $dark-gray-color !important;
+  padding:10px !important;
+  
+}
   .glyphicon{
     font-size: 15pt !important;
   }

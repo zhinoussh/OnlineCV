@@ -1,9 +1,18 @@
+$light-gray-blue-color: rgb(217, 236, 245);
+$light-blue-color: rgb(125, 209, 248);
 $base-blue-color: rgb(0, 174, 255);
 $dark-blue-color:darken(rgb(0, 174, 255),10%);
+$darker-blue-color:darken(rgb(0, 174, 255),20%);
 
-$dark-gray-color:rgba(139, 139, 139, 0.151);
-$darker-gray-color:rgb(119, 116, 116);
-$gray-color: rgba(238, 238, 238, 0.815);
+$dark-gray-color:rgb(139, 139, 139);
+$darker-gray-color:rgb(68, 66, 66);
+$gray-color: rgb(212, 212, 212);
+$light-gray-color: #eee;
 
 $red-color: rgb(172, 3, 3);
 $light-red-color: lighten(rgb(172, 3, 3),5%);
+
+$light-green-color: rgb(137, 216, 160);
+
+$light-yellow-color: rgb(253, 233, 119);
+$dark-yellow-color: rgb(119, 103, 9);

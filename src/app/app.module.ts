@@ -12,6 +12,8 @@ import { PageNotFoundComponent} from './components/page-not-found/page-not-found
 import { TopProgressBarComponent } from './components/top-progress-bar/top-progress-bar.component';
 import { PersonalProfileComponent } from './components/personal-profile/personal-profile.component';
 import { EducationalBackgroundComponent } from './components/educational-background/educational-background.component';
+import { WorkHistoryComponent } from './components/work-history/work-history.component';
+import { SkillsComponent } from './components/skills/skills.component';
 
 import { SharedGeneratingLevelService } from './services/shared-generator-level/shared-generating-level.service';
 
@@ -22,7 +24,9 @@ import { SharedGeneratingLevelService } from './services/shared-generator-level/
     PageNotFoundComponent,
     TopProgressBarComponent,
     PersonalProfileComponent,
-    EducationalBackgroundComponent
+    EducationalBackgroundComponent,
+    WorkHistoryComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

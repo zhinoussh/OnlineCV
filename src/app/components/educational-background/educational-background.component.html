@@ -1,40 +1,44 @@
 <div fxLayout class="main-container">
-  <div fxFlex.gt-sm="40%" fxFlex="90%" class="education-container">
-    <div fxLayout="column" fxLayoutGap="50px">
+  <div fxFlex.gt-sm="45%" fxFlex="90%" class="education-container">
+    <div class='text-complete-education'>
+      Enter your educational history
+    </div>
+    <div fxLayout="column" fxLayoutGap="30px">
       <form #educationItemForm="ngForm">
         <div fxLayout="column" fxLayoutGap="10px">
           <div fxLayout>
-            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
-              <label for="educationTitle" class="text-label">Title</label>
+            <div fxFlex.gt-md="20%" fxHide.xs fxHide.sm fxHide.md>
+              <label for="educationTitle" class="text-label">Education Title</label>
             </div>
-            <div fxFlex.gt-sm="70%" fxFlex="90%">
+            <div fxFlex.gt-md="73%" fxFlex="90%">
               <input type="text" class="form-control" id="educationTitle" [(ngModel)]="educationItem.title" name="educationTitle" required
-                #title="ngModel" placeholder="Title">
+                #title="ngModel" placeholder="Education Title">
             </div>
           </div>
           <div fxLayout>
-            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
+            <div fxFlex.gt-md="20%" fxHide.xs fxHide.sm fxHide.md>
               <label for="Institute" class="text-label">Institute</label>
             </div>
-            <div fxFlex.gt-sm="70%" fxFlex="90%">
+            <div fxFlex.gt-md="73%" fxFlex="90%">
               <input type="text" class="form-control" id="Institute" [(ngModel)]="educationItem.institute" name="Institute" required #institute="ngModel"
                 placeholder="Institute">
             </div>
           </div>
           <div fxLayout>
-            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
+            <div fxFlex.gt-md="20%" fxHide.xs fxHide.sm fxHide.md>
               <label for="graduationYear" class="text-label">Graduation Year</label>
             </div>
-            <div fxFlex.gt-sm="70%" fxFlex="88%">
+            <div fxFlex.gt-md="73%" fxFlex="88%">
               <input type="text" pattern="[0-9]{4}" class="form-control" id="graduationYear" [(ngModel)]="educationItem.graduationYear"
                 name="graduationYear" required #year="ngModel" placeholder="Graduation Year">
             </div>
-            <div fxFlex.gt-sm="6%" fxFlexOffset.gt-sm="1%" fxFlex="12%" fxFlexOffset="3px">
+            <div fxFlex.gt-md="5%" fxFlexOffset.gt-md="1%" fxFlex="12%" fxFlexOffset="3px">
               <button type="button" class="btn btn-success btn-ok" (click)="AddEducationItem(educationItemForm)" [disabled]="!educationItemForm.form.valid">
                 <i class="glyphicon glyphicon-ok"></i>
               </button>
             </div>
           </div>
+
           <!-- alert message -->
           <div fxLayout>
             <div fxFlex.gt-sm="70%" fxFlexOffset.gt-sm="20%" fxFlex="90%" fxFlexOffset="0">
@@ -46,37 +50,43 @@
           </div>
           <!-- Show Education History Items -->
           <ng-container *ngIf="educationArray.length>0; else showEmptyEducationBlock">
-            <div *ngFor="let item of educationArray; let selectedIndex = index; let arrLength = count" flexLayout class="education-item">
-              <div fxFlex.gt-sm="80%" fxFlex="100%">
-                <b>{{item.title}}</b>
-                <br> {{item.institute}} - {{item.graduationYear}}
+            <div *ngFor="let item of educationArray; let selectedIndex = index; let arrLength = count" fxLayout>
+              <div fxFlex="8%" fxHide.xs class="education-counter" fxLayout>
+                  <i fxFlex="50%" class="glyphicon glyphicon-education"></i>
+                  <div fxFlex="30%" fxFlexOffset="20%">{{selectedIndex+1}}</div>
               </div>
-              <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
-                <button type="button" class="btn btn-primary btn-edit" (click)="EditEducationItem(selectedIndex)">
-                  <i class="glyphicon glyphicon-pencil"></i>
-                </button>
-              </div>
-              <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
-                <button type="button" class="btn btn-primary btn-delete" (click)="DeleteEducationItem(selectedIndex)">
-                  <i class="glyphicon glyphicon-trash"></i>
-                </button>
-              </div>
-              <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
-                <button type="button" class="btn btn-primary btn-move-up" [disabled]="selectedIndex === 0" (click)="MoveUpEducationItem(selectedIndex)">
-                  <i class="glyphicon glyphicon-arrow-up"></i>
-                </button>
-              </div>
-              <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
-                <button type="button" class="btn btn-primary btn-move-down" [disabled]="selectedIndex === arrLength-1" (click)="MoveDownEducationItem(selectedIndex)"
-                  to>
-                  <i class="glyphicon glyphicon-arrow-down"></i>
-                </button>
+              <div class="education-item" fxFlex.gt-sm="90%" fxFlex="100%">
+                <div fxFlex.gt-sm="80%" fxFlex="100%">
+                  <b>{{item.title}}</b>
+                  <br>{{item.institute}} - {{item.graduationYear}}
+                </div>
+
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-edit" (click)="EditEducationItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-delete" (click)="DeleteEducationItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-trash"></i>
+                  </button>
+                </div>
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-move-up" [disabled]="selectedIndex === 0" (click)="MoveUpEducationItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-arrow-up"></i>
+                  </button>
+                </div>
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-move-down" [disabled]="selectedIndex === arrLength-1" (click)="MoveDownEducationItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-arrow-down"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </ng-container>
-          <ng-template #showEmptyEducationBlock>
-            <label class='text-empty-block'>No Education History.</label>
-          </ng-template>
+          <!-- <ng-template #showEmptyEducationBlock>
+            <div class='alert alert-default'>No Education History.</div>
+          </ng-template> -->
         </div>
       </form>
 
@@ -84,7 +94,7 @@
         <div fxFlexOffset="20%" fxFlex="70%" fxFlexOffset.xs="0" fxFlex.xs="100%">
           <form (ngSubmit)="SaveAllEducation()" #educationForm="ngForm">
             <button type="submit" class="btn btn-primary" [disabled]="educationArray.length===0">
-              <i class="glyphicon glyphicon-education"></i> Save Education History
+              <i class="glyphicon glyphicon-floppy-disk"></i> Save Education History
             </button>
           </form>
         </div>

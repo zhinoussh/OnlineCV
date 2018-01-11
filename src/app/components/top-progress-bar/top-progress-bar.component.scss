@@ -2,13 +2,14 @@
 @import "src/css/fonts";
 
 .header-container{
-    margin: 1%;
+    margin-bottom:1%;
     padding: 1% 0 0 0;
-    background-color: $gray-color;
+    background-color: $light-gray-blue-color;
     .header-item{
         font-family: 'Bree Serif', serif;
         font-size: 14pt;
-        border-bottom: 5px solid $dark-gray-color;      
+        color:$darker-blue-color;        
+        border-bottom: 5px solid $gray-color;      
         text-align: center;
         margin-left: 1%;    
     }

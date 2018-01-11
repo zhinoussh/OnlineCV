@@ -1,0 +1,154 @@
+<div fxLayout class="main-container">
+  <div fxFlex.gt-sm="45%" fxFlex="90%" class="experience-container">
+    <div class='text-complete-work'>
+      Enter your work history
+    </div>
+    <div fxLayout="column" fxLayoutGap="50px">
+      <form #experienceItemForm="ngForm">
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div fxLayout>
+            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
+              <label for="jobTitle" class="text-label">Job Title</label>
+            </div>
+            <div fxFlex.gt-sm="73%" fxFlex="90%">
+              <input type="text" class="form-control" id="jobTitle" [(ngModel)]="experienceItem.jobTitle" name="jobTitle" required #title="ngModel"
+                placeholder="Job Title">
+            </div>
+          </div>
+          <div fxLayout>
+            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
+              <label for="Employer" class="text-label">Employer</label>
+            </div>
+            <div fxFlex.gt-sm="73%" fxFlex="90%">
+              <input type="text" class="form-control" id="Employer" [(ngModel)]="experienceItem.Employer" name="Employer" required #employer="ngModel"
+                placeholder="Employer">
+            </div>
+          </div>
+          <div fxLayout>
+            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
+              <label for="Location" class="text-label">Location</label>
+            </div>
+            <div fxFlex.gt-sm="73%" fxFlex="90%">
+              <input type="text" class="form-control" id="Location" [(ngModel)]="experienceItem.Location" name="Location" required #location="ngModel"
+                placeholder="Location">
+            </div>
+          </div>
+          <!-- Start Date -->
+          <div fxLayout>
+            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
+              <label class="text-label">Start Date</label>
+            </div>
+            <div fxFlex.gt-md="15%" fxFlex.sm="30%" fxFlex.xs="30%" fxFlex.md="20%">
+              <select class="form-control" id="startMonth" name="startMonth" [(ngModel)]="experienceItem.startMonth">
+                <option [value]="-1" disabled>Month</option>
+                <option *ngFor="let month of monthArray" [value]="month">{{month}}</option>
+              </select>
+            </div>
+            <div fxFlex.gt-md="15%" fxFlex.sm="30%" fxFlex.xs="30%" fxFlex.md="20%" fxFlexOffset="2%">
+              <div class="form-group">
+                <select class="form-control" id="startYear" name="startYear" [(ngModel)]="experienceItem.startYear">
+                  <option [value]="-1" disabled>Year</option>
+                  <option *ngFor="let year of yearArray" [value]="year">{{year}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- End Date -->
+          <div fxLayout>
+            <div fxFlex.gt-sm="20%" fxHide.xs fxHide.sm>
+              <label class="text-label">End Date</label>
+            </div>
+            <div fxFlex.gt-md="15%" fxFlex.sm="30%" fxFlex.xs="30%" fxFlex.md="20%">
+              <select class="form-control" id="endMonth" name="endMonth" [(ngModel)]="experienceItem.endMonth">
+                <option [value]="-1" disabled>Month</option>
+                <option *ngFor="let month of monthArray" [value]="month">{{month}}</option>
+              </select>
+            </div>
+            <div fxFlex.gt-md="15%" fxFlex.sm="30%" fxFlex.xs="30%" fxFlex.md="20%" fxFlexOffset="2%">
+              <div class="form-group">
+                <select class="form-control" id="endYear" name="endYear" [(ngModel)]="experienceItem.endYear">
+                  <option [value]="-1" disabled>Year</option>
+                  <option *ngFor="let year of yearArray" [value]="year">{{year}}</option>
+                </select>
+              </div>
+            </div>
+            <div fxFlex.gt-md="5%" fxFlexOffset.gt-md="1%" fxFlex="12%" fxFlexOffset="3px">
+              <button type="button" class="btn btn-success btn-ok" (click)="AddExperienceItem(experienceItemForm)" [disabled]="!experienceItemForm.form.valid || !checkDropdownsValidity()">
+                <i class="glyphicon glyphicon-ok"></i>
+              </button>
+            </div>
+          </div>
+
+          <div fxLayout>
+            <div fxFlex.gt-sm="80%" fxFlexOffset.gt-sm="20%" fxFlexOffset="0" fxFlex="100%">
+              <label class="checkbox-inline">
+                <input type="checkbox" [(ngModel)]="experienceItem.stillInRole" name="StillInRole">Still in Role
+              </label>
+            </div>
+          </div>
+
+          <!-- alert message -->
+          <div fxLayout>
+            <div fxFlex.gt-sm="70%" fxFlexOffset.gt-sm="20%" fxFlex="90%" fxFlexOffset="0">
+              <div class="alert alert-danger" [hidden]="(title.pristine || title.valid) &&
+              (employer.pristine || employer.valid) && (location.pristine || location.valid)">
+                Please ensure all fields are entered and in correct format.
+              </div>
+            </div>
+          </div>
+          <!-- Show Experience History Items -->
+          <ng-container *ngIf="experienceArray.length>0">
+            <div *ngFor="let item of experienceArray; let selectedIndex = index; let arrLength = count" flexLayout>
+              <div fxFlex="8%" fxHide.xs class="experience-counter" fxLayout>
+                <i fxFlex="50%" class="glyphicon glyphicon-bookmark"></i>
+                <div fxFlex="30%" fxFlexOffset="20%">{{selectedIndex+1}}</div>
+              </div>
+              <div class="experience-item" fxFlex.gt-sm="90%" fxFlex="100%">
+                <div fxFlex.gt-sm="80%">
+                  <b>{{item.jobTitle}} - {{item.Employer}}</b>
+                  <br>{{item.Location}} <b>|</b> {{item.startMonth}} {{item.startYear}} -
+                  <ng-container *ngIf="item.stillInRole===true; else showEndDate">
+                    Current
+                  </ng-container>
+                  <ng-template #showEndDate>{{item.endMonth}} {{item.endYear}}</ng-template>
+                </div>
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-edit" (click)="EditExperienceItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-delete" (click)="DeleteExperienceItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-trash"></i>
+                  </button>
+                </div>
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-move-up" [disabled]="selectedIndex === 0" (click)="MoveUpExperienceItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-arrow-up"></i>
+                  </button>
+                </div>
+                <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                  <button type="button" class="btn btn-primary btn-move-down" [disabled]="selectedIndex === arrLength-1" (click)="MoveDownExperienceItem(selectedIndex)">
+                    <i class="glyphicon glyphicon-arrow-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </form>
+
+      <div fxLayout>
+        <div fxFlexOffset="20%" fxFlex="70%" fxFlexOffset.xs="0" fxFlex.xs="100%">
+          <form (ngSubmit)="SaveAllExperiences()" #educationForm="ngForm">
+            <button type="submit" class="btn btn-primary" [disabled]="experienceArray.length===0">
+              <i class="glyphicon glyphicon-floppy-disk"></i> Save Work History
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

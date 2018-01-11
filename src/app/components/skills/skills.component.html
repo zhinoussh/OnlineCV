@@ -1,0 +1,101 @@
+<div fxLayout class="main-container">
+    <div fxFlex.gt-sm="45%" fxFlex="90%" class="skill-container">
+      <div class='text-complete-skill'>
+        Enter your skills or certificates
+      </div>
+      <div fxLayout="column" fxLayoutGap="30px">
+        <form #skillItemForm="ngForm">
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div fxLayout>
+              <div fxFlex.gt-md="20%" fxHide.xs fxHide.sm fxHide.md>
+                <label for="skillName" class="text-label">Skill/Certificate Name</label>
+              </div>
+              <div fxFlex.gt-md="73%" fxFlex="90%">
+                <input type="text" class="form-control" id="skillName" [(ngModel)]="skillItem.skillName" name="skillName" required
+                  #skillname="ngModel" placeholder="Skill/Certificate Name">
+              </div>
+            </div>
+            <div fxLayout>
+              <div fxFlex.gt-md="20%" fxHide.xs fxHide.sm fxHide.md>
+                <label for="Institute" class="text-label">Institute</label>
+              </div>
+              <div fxFlex.gt-md="73%" fxFlex="90%">
+                <input type="text" class="form-control" id="Institute"  placeholder="Institute(optional)"
+                [(ngModel)]="skillItem.Institute" name="Institute" #institute="ngModel">
+              </div>
+            </div>
+            <div fxLayout>
+              <div fxFlex.gt-md="20%" fxHide.xs fxHide.sm fxHide.md>
+                <label for="year" class="text-label">Graduation Year</label>
+              </div>
+              <div fxFlex.gt-md="73%" fxFlex="88%">
+                <input type="text" pattern="[0-9]{4}" class="form-control" id="year" [(ngModel)]="skillItem.year"
+                  name="year" #year="ngModel" placeholder="Graduation Year(optional)">
+              </div>
+              <div fxFlex.gt-md="5%" fxFlexOffset.gt-md="1%" fxFlex="12%" fxFlexOffset="3px">
+                <button type="button" class="btn btn-success btn-ok" (click)="AddskillItem(skillItemForm)" [disabled]="!skillItemForm.form.valid">
+                  <i class="glyphicon glyphicon-ok"></i>
+                </button>
+              </div>
+            </div>
+  
+            <!-- alert message -->
+            <div fxLayout>
+              <div fxFlex.gt-sm="70%" fxFlexOffset.gt-sm="20%" fxFlex="90%" fxFlexOffset="0">
+                <div class="alert alert-danger" [hidden]="(skillname.pristine || skillname.valid)">
+                  Please ensure you entered skill or certificate name.
+                </div>
+              </div>
+            </div>
+            <!-- Show skill History Items -->
+            <ng-container *ngIf="skillArray.length>0; else showEmptyskillBlock">
+              <div *ngFor="let item of skillArray; let selectedIndex = index; let arrLength = count" fxLayout>
+                <div fxFlex="8%" fxHide.xs class="skill-counter" fxLayout>
+                    <i fxFlex="50%" class="glyphicon glyphicon-certificate"></i>
+                    <div fxFlex="30%" fxFlexOffset="20%">{{selectedIndex+1}}</div>
+                </div>
+                <div class="skill-item" fxFlex.gt-sm="90%" fxFlex="100%">
+                  <div fxFlex.gt-sm="80%" fxFlex="100%">
+                    <b>{{item.skillName}}</b>
+                    <br>{{item.Institute}}<span *ngIf="item.year && item.Institute"> - </span>{{item.year}}
+                  </div>
+  
+                  <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                    <button type="button" class="btn btn-primary btn-edit" (click)="EditskillItem(selectedIndex)">
+                      <i class="glyphicon glyphicon-pencil"></i>
+                    </button>
+                  </div>
+                  <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                    <button type="button" class="btn btn-primary btn-delete" (click)="DeleteskillItem(selectedIndex)">
+                      <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                  </div>
+                  <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                    <button type="button" class="btn btn-primary btn-move-up" [disabled]="selectedIndex === 0" (click)="MoveUpskillItem(selectedIndex)">
+                      <i class="glyphicon glyphicon-arrow-up"></i>
+                    </button>
+                  </div>
+                  <div fxFlex.gt-sm="5%" fxFlex="8%" fxFlexOffset="5px">
+                    <button type="button" class="btn btn-primary btn-move-down" [disabled]="selectedIndex === arrLength-1" (click)="MoveDownskillItem(selectedIndex)">
+                      <i class="glyphicon glyphicon-arrow-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </form>
+  
+        <div fxLayout>
+          <div fxFlexOffset="20%" fxFlex="70%" fxFlexOffset.xs="0" fxFlex.xs="100%">
+            <form (ngSubmit)="SaveAllskill()" #skillForm="ngForm">
+              <button type="submit" class="btn btn-primary" [disabled]="skillArray.length===0">
+                <i class="glyphicon glyphicon-floppy-disk"></i> Save skills
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
